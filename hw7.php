@@ -28,9 +28,9 @@ $max_assists_index = 0;
 $max_assists = -1;
 
 while ($row = mysqli_fetch_assoc($query)){
-	$results = array('pos' => $row['POS'],
-						'player' => $row['Player'],
-						'club' => $row['Club'],
+	$results = array('pos' => utf8_encode($row['POS']),
+						'player' => utf8_encode($row['Player']),
+						'club' => utf8_encode($row['Club']),
 						'max_assists' => $row['A'] + 0,
 						'avg_assists' => $row['AVG_A'] + 0);
 }
